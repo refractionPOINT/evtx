@@ -8,7 +8,7 @@ import (
 )
 
 type GeneratedEvent struct {
-	Event *ordereddict.Dict
+	Event map[string]interface{}
 	Err   error
 }
 
@@ -59,7 +59,11 @@ func GenerateEvents(fd io.ReadSeeker) (chan GeneratedEvent, func(), error) {
 					if !ok {
 						continue
 					}
-					if !genEvent(GeneratedEvent{Event: event_map, Err: err}) {
+					e := event_map.ToDict()
+					if e == nil {
+						continue
+					}
+					if !genEvent(GeneratedEvent{Event: *e, Err: err}) {
 						return
 					}
 				}
