@@ -1,4 +1,4 @@
-module www.velocidex.com/golang/evtx
+module github.com/refractionPOINT/evtx
 
 require (
 	github.com/Velocidex/ordereddict v0.0.0-20220107075049-3dbe58412844
