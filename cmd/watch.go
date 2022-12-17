@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/davecgh/go-spew/spew"
+	"github.com/refractionPOINT/evtx"
 	kingpin "gopkg.in/alecthomas/kingpin.v2"
-	"www.velocidex.com/golang/evtx"
 )
 
 var (

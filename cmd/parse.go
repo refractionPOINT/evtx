@@ -6,8 +6,8 @@ import (
 	"os"
 
 	"github.com/Velocidex/ordereddict"
+	"github.com/refractionPOINT/evtx"
 	kingpin "gopkg.in/alecthomas/kingpin.v2"
-	"www.velocidex.com/golang/evtx"
 )
 
 var (
