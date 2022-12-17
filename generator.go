@@ -23,7 +23,7 @@ func GenerateEvents(fd io.ReadSeeker) (chan GeneratedEvent, func(), error) {
 		return nil, nil, errors.New("file is not an EVTX file (wrong magic)")
 	}
 
-	if header.MinorVersion != 1 || header.MajorVersion != 3 {
+	if !is_supported(header.MinorVersion, header.MajorVersion) {
 		return nil, nil, errors.New("unsupported EVTX version")
 	}
 
