@@ -59,11 +59,11 @@ func GenerateEvents(fd io.ReadSeeker) (chan GeneratedEvent, func(), error) {
 					if !ok {
 						continue
 					}
-					m := event_map.ToDict()
+					m := event_map.ToMap()
 					if m == nil {
 						continue
 					}
-					if !genEvent(GeneratedEvent{Event: *m, Err: err}) {
+					if !genEvent(GeneratedEvent{Event: m, Err: err}) {
 						return
 					}
 				}
